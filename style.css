@@ -277,3 +277,35 @@ p {
 .dark h2 {
     color: #60a5fa;
 }
+/* ====== ТЁМНАЯ ТЕМА ПОЛНОСТЬЮ ====== */
+
+.dark {
+    background: #0f172a;
+    color: white;
+}
+
+.dark .review {
+    background: #1e293b !important;
+    color: white !important;
+}
+
+.dark .review p {
+    color: white !important;
+}
+
+.dark .review strong {
+    color: #60a5fa !important;
+}
+
+.dark ul {
+    color: white !important;
+}
+
+.dark li {
+    color: white !important;
+}
+
+.dark h2,
+.dark h3 {
+    color: #60a5fa !important;
+}
