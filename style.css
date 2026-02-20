@@ -309,3 +309,22 @@ p {
 .dark h3 {
     color: #60a5fa !important;
 }
+/* Тёмная тема для информационных блоков */
+
+.dark section {
+    background: #1e293b !important;
+    color: white !important;
+}
+
+.dark ul {
+    background: transparent !important;
+    color: white !important;
+}
+
+.dark li {
+    color: white !important;
+}
+
+.dark p {
+    color: white !important;
+}
