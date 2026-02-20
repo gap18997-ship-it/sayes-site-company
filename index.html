@@ -61,6 +61,15 @@ SAYES — це сучасна офісна компанія, яка об’єд�
 <li>Оплачуємо стажування та всьому навчаємо</li>
 </ul>
 
+<h2>Як ми працюємо?</h2>
+
+<div class="steps">
+    <div class="step">1️⃣ Ви дзвоните або пишите у Telegram</div>
+    <div class="step">2️⃣ Ми зв'язуємось та консультуємо</div>
+    <div class="step">3️⃣ Обговорюємо умови роботи</div>
+    <div class="step">4️⃣ Записуємо вас на співбесіду</div>
+</div>
+
 <h2>Відгуки співробітників</h2>
 
 <div class="reviews">
@@ -105,6 +114,21 @@ SAYES — це сучасна офісна компанія, яка об’єд�
 </div>
 
 <a href="tel:+380661655247" class="fixed-call">Дзвонити</a>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('section, .step, .review').forEach(el => {
+    el.classList.add('fade');
+    observer.observe(el);
+});
+</script>
 
 </body>
 </html>
