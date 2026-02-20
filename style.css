@@ -82,3 +82,52 @@ img:hover {
 .contacts h3 {
     margin-bottom: 15px;
 }
+/* Главный экран */
+.hero {
+    background: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)),
+    url("images/work1.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.mainbtn {
+    background: #22c55e;
+    color: white;
+    padding: 16px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.mainbtn:hover {
+    background: #16a34a;
+}
+.tg-buttons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.tg {
+    display: inline-block;
+    background: #229ED9;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 5px;
+}
+
+.tg:hover {
+    background: #1b8abf;
+}
