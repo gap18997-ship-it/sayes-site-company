@@ -259,3 +259,21 @@ p {
     opacity: 1;
     transform: translateY(0);
 }
+/* Тёмная тема для блоков */
+
+.dark .review {
+    background: #1e293b;
+    color: white;
+}
+
+.dark .review strong {
+    color: #60a5fa;
+}
+
+.dark ul li {
+    color: white;
+}
+
+.dark h2 {
+    color: #60a5fa;
+}
