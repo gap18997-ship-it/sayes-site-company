@@ -328,3 +328,19 @@ p {
 .dark p {
     color: white !important;
 }
+/* ===== ПОЛНОЕ ПЕРЕКРЫТИЕ ТЁМНОЙ ТЕМЫ ===== */
+
+.dark section,
+.dark .info,
+.dark .about,
+.dark .stats {
+    background: #1e293b !important;
+    color: white !important;
+}
+
+.dark section h2,
+.dark section h3,
+.dark section p,
+.dark section li {
+    color: white !important;
+}
