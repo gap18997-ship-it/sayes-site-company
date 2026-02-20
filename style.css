@@ -344,3 +344,23 @@ p {
 .dark section li {
     color: white !important;
 }
+/* Тёмная тема для блока "Як ми працюємо?" */
+
+.dark .steps,
+.dark .work,
+.dark .process {
+    background: #1e293b !important;
+    color: white !important;
+}
+
+.dark .steps h2,
+.dark .work h2,
+.dark .process h2,
+.dark .steps p,
+.dark .work p,
+.dark .process p,
+.dark .steps li,
+.dark .work li,
+.dark .process li {
+    color: white !important;
+}
