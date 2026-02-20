@@ -4,7 +4,7 @@ html {
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(180deg, #eef2ff, #f8fafc);
+    background: background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
 /* ШАПКА */
@@ -221,4 +221,41 @@ section, .review, .gallery img {
 .tg:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+section {
+    padding: 80px 20px;
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+p {
+    margin-bottom: 18px;
+}
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.step {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 220px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
 }
