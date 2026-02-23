@@ -1,216 +1,164 @@
-html {
-    scroll-behavior: smooth;
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sayes</title>
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+</head>
+
+<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark");
 }
+</script>
 
-/* ===== ОСНОВА ===== */
+<body>
 
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
-    color: #111;
-}
+<div class="hero">
+    <h1>SAYES</h1>
+    <p class="subtitle">Гарантуємо професійне виконання: акуратно, якісно та в обумовлений термін.</p>
+    <a href="#contacts" class="mainbtn">Отримати консультацію</a>
+</div>
 
-/* Ограничение ширины контента */
-body > *:not(.hero):not(.fixed-call):not(.theme-toggle) {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-}
+<h2>Ми</h2>
+<p>
+SAYES — компанія можливостей, зростання та стабільного доходу
 
-/* ===== HERO ===== */
+SAYES — це сучасна офісна компанія, яка об’єднує амбітних і цілеспрямованих людей віком від 16 до 50 років! Ми створюємо комфортне робоче середовище, де кожен співробітник може розкрити свій потенціал і вийти на гідний рівень доходу.
+</p>
 
-.hero {
-    background: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)),
-    url("images/work1.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-}
+<h2>Чим займається SAYES?</h2>
+<ul>
+<li>Організація та супровід робочих процесів </li>
+<li>Робота з клієнтськими зверненнями та комунікація </li>
+<li>Підтримка та розвиток менеджерів </li>
+<li>Навчання співробітників з нуля </li>
+<li>Постійне підвищення ефективності команди </li>
+<li>Ми працюємо за чіткою системою, де кожен розуміє свою роль і бачить перспективу зростання. </li>
 
-.hero h1 {
-    font-size: 48px;
-    font-weight: 800;
-    margin: 0;
-}
+</ul>
 
-.subtitle {
-    font-size: 22px;
-    margin: 15px 0 30px;
-}
+<h2>Що отримують співробітники SAYES? </h2>
+<ul>
+<li>Робота в сучасному офісі </li>
+<li>Покрокове навчання та підтримка наставника </li>
+<li>Дружній колектив і здорова атмосфера </li>
+<li>Кар’єрне зростання всередині компанії </li>
+<li>Гарантована заробітна плата вже на другий день виходу на лінію! </li>
+</ul>
 
-/* ===== ЗАГОЛОВКИ ===== */
+<h2>Чому нам довіряють</h2>
+<ul>
+<li>Наша компанія на ринку праці з 2017 року</li>
+<li>Відділення SAYES є у 8 містах України.</li>
+<li>Завжди своєчасна виплата зарплати, бонусної системи (раз на тиждень)</li>
+<li>Повертаємо гроші за дорогу та надаємо житло</li>
+<li>Оплачуємо стажування та всьому навчаємо</li>
+</ul>
 
-h2 {
-    color: #1e3a8a;
-    border-left: 6px solid #2563eb;
-    padding-left: 10px;
-    margin-top: 50px;
-}
+<h2>Як ми працюємо?</h2>
 
-/* ===== ТЕКСТ ===== */
+<div class="steps">
+    <div class="step">1️⃣ Ви дзвоните або пишите у Telegram</div>
+    <div class="step">2️⃣ Ми зв'язуємось та консультуємо</div>
+    <div class="step">3️⃣ Обговорюємо умови роботи</div>
+    <div class="step">4️⃣ Записуємо вас на співбесіду</div>
+</div>
 
-p {
-    font-size: 18px;
-    line-height: 1.6;
-}
+<h2>Відгуки співробітників</h2>
 
-/* ===== КАРТОЧКИ ===== */
+<div class="reviews">
+    <div class="review">
+        <p>“Дякую компанії Sayes — завдяки їй я переїхав із тимчасово окупованої території до міста Дніпро. Мені надали житло, всього навчили та, головне, підтримали у важкий період мого життя. Працюю вже четвертий рік і хочу сказати велике людське дякую за те, що допомогли мені стати на ноги та почати заробляти!”</p>
+        <strong>— Олександр</strong>
+    </div>
 
-section {
-    background: white;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-}
+    <div class="review">
+        <p>“Я студентка першого курсу і працюю в цій компанії вже рік. Мені встановили індивідуальний графік роботи з урахуванням мого навчання. Працюю 5–6 годин на день, але все одно заробляю більше, ніж у кав’ярні. Дякую, що дали мені можливість проявити себе. Окрема велика вдячність HR-менеджеру Руслану за те, що якісно та доступно ввів мене в курс справ.”</p>
+        <strong>— Анастасія</strong>
+    </div>
 
-/* ===== СПИСКИ ===== */
+    <div class="review">
+        <p>“Моє попереднє місце роботи — продуктовий магазин біля дому, моя середня заробітна плата становила 9 тисяч гривень. Син запропонував мені вакансію менеджера по роботі з клієнтами в компанії Sayes. Я довго вагалася й переживала через свій вік, але коли прийшла, побачила в колективі багато людей мого віку. Зараз вийшла на стабільний дохід — 40 тисяч гривень на місяць. Тому хочу закликати своїх однолітків не відкладати все на потім. Тут чудове керівництво, яке завжди підтримує та мотивує. Бажаю всім мирного неба над головою, бережіть себе!”</p>
+        <strong>— Оксана</strong>
+    </div>
+</div>
 
-ul {
-    padding-left: 20px;
-}
+<form action="https://formspree.io/f/xabcd123" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="Ваше ім'я" required>
+    <input type="tel" name="phone" placeholder="Ваш номер телефону" required>
+    <textarea name="message" placeholder="Коментар (необов'язково)"></textarea>
 
-li {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
+    <input type="hidden" name="_next" value="https://gap18997-ship-it.github.io/thanks.html">
 
-/* ===== ШАГИ ===== */
+    <button type="submit">Відправити</button>
+</form>
 
-.steps {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
+<h2 id="contacts">Контакти</h2>
+<div class="contacts">
+    <h3>Телефон: +380661655247</h3>
+    <a href="tel:+380661655247" class="call">Дзвонити</a>
+</div>
+<h3>Чекаємо вас у Telegram</h3>
 
-.step {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    width: 220px;
-    text-align: center;
-    font-weight: 600;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
+<div class="tg-buttons">
+    <a href="https://t.me/hrKaldun" class="tg">HR Kaldun</a>
+    <a href="https://t.me/work_formoney" class="tg">Work For Money</a>
+    <a href="https://t.me/hr_magic23" class="tg">HR Magic</a>
+</div>
+<p>Наші відділення: Дніпро, Київ, Львів, Вінниця, Черкаси, Кривий Ріг, Запоріжжя, Вільногірськ </p>
 
-/* ===== ОТЗЫВЫ ===== */
+<h2>Наші роботи</h2>
 
-.reviews {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
+<div class="gallery">
+<img src="images/work1.jpg" width="300">
+<img src="images/work2.jpg" width="300">
+<img src="images/work3.jpg" width="300">
+<img src="images/work4.jpg" width="300">
+<img src="images/work5.jpg" width="300">
+</div>
 
-.review {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    width: 280px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
+<a href="tel:+380661655247" class="fixed-call">Дзвонити</a>
 
-/* ===== КНОПКИ ===== */
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
 
-.mainbtn,
-.call,
-.tg {
-    display: inline-block;
-    padding: 15px 25px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
+document.querySelectorAll('section, .step, .review').forEach(el => {
+    el.classList.add('fade');
+    observer.observe(el);
+});
+</script>
 
-.mainbtn {
-    background: #22c55e;
-    color: white;
-}
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
 
-.call {
-    background: #16a34a;
-    color: white;
-}
+document.querySelectorAll("section, .review, .step").forEach(el => {
+  el.classList.add("fade-in");
+  observer.observe(el);
+});
+</script>
 
-.tg {
-    background: #229ED9;
-    color: white;
-}
-
-.mainbtn:hover,
-.call:hover,
-.tg:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* ===== ГАЛЕРЕЯ ===== */
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-
-.gallery img {
-    width: 280px;
-    border-radius: 12px;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-    transition: 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* ===== ФИКСИРОВАННАЯ КНОПКА ===== */
-
-.fixed-call {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #22c55e;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* ===== ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ ===== */
-
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #111;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* ===== ТЁМНАЯ ТЕМА ===== */
-
-.dark {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
-}
-
-.dark section,
-.dark .review,
-.dark .step {
-    background: #1e293b;
-    color: white;
-}
+</body>
+</html>
 
 .dark h2 {
     color: #60a5fa;
 }
+
