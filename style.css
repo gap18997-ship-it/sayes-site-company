@@ -1,389 +1,314 @@
 /* Общие стили */
-html {
-    scroll-behavior: smooth;
-}
+html {scroll-behavior: smooth;}
+body {margin: 0; font-family: 'Montserrat', sans-serif; background: #f4f6f9; color: #111;}
 
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: #f4f6f9;
-    color: #111;
-}
-
-/* Анимация появления */
-.fade-up {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease;
-}
-
-.fade-up.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* Плавное появление всех секций */
+.fade-up { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
+.fade-up.show { opacity: 1; transform: translateY(0); }
 
 /* Кнопка смены темы */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #111;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    z-index: 1000;
-}
+.theme-toggle { position: fixed; top: 20px; right: 20px; background: #111; color: white; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; z-index: 1000; }
 
-/* Главный экран */
+/* Hero с анимацией */
 .hero {
-    background: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)), 
-                url("images/work1.jpg") center/cover no-repeat;
-    color: white;
-    text-align: center;
-    padding: 90px 20px;
-    min-height: 100vh; /* Высота экрана — 100% от окна */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background: linear-gradient(135deg, #22c55e, #16a34a); 
+  background-size: 400% 400%;
+  animation: gradientBackground 8s ease infinite;
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)), url("images/work1.jpg") center/cover no-repeat;
+  transition: background-position 0.2s;
 }
 
 .hero h1 {
-    font-size: 48px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin: 0;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
 .hero .subtitle {
-    font-size: 22px;
-    opacity: 0.95;
-    margin: 15px 0 25px;
+  font-size: 22px;
+  opacity: 0.95;
+  margin: 15px 0 25px;
 }
 
-.mainbtn, .call, .tg, .fixed-call {
-    transition: all 0.3s ease;
+/* Анимация для слов в заголовке */
+.hero-text .word {
+  opacity: 0;
+  animation: fadeInWord 1s ease forwards;
+}
+
+@keyframes fadeInWord {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Градиентный фон (анимируется) */
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Кнопки */
+.mainbtn, .call, .tg, .fixed-call { transition: all 0.3s ease; }
 .mainbtn, .call {
-    display: inline-block;
-    background: #22c55e;
-    color: white;
-    padding: 15px 25px;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px 0;
+  display: inline-block;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  padding: 16px 28px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .mainbtn:hover, .call:hover {
-    background: #16a34a;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* Telegram кнопки */
 .tg-buttons {
-    text-align: center;
-    margin: 15px 0;
+  text-align: center;
+  margin: 15px 0;
 }
 
 .tg {
-    display: inline-block;
-    background: #229ED9;
-    color: white;
-    padding: 14px 24px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 5px;
+  display: inline-block;
+  background: #229ED9;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 5px;
+  font-weight: 600;
 }
 
 .tg:hover {
-    background: #1b8abf;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Заголовки */
-h2 {
-    color: #1e3a8a;
-    border-left: 6px solid #2563eb;
-    padding-left: 10px;
-    margin: 40px 0 20px;
-}
-
-/* Секции и glassmorphism */
+/* Секции */
 section, .review, .step, .contact-form {
-    background: rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 950px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 950px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
-/* Текст в секциях */
+h2 {
+  color: #1e3a8a;
+  border-left: 6px solid #2563eb;
+  padding-left: 10px;
+  margin: 40px 0 20px;
+}
+
 p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 18px;
 }
 
-/* Списки */
 ul {
-    padding: 20px 25px;
-    border-radius: 12px;
-    list-style: inside disc;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
+  padding: 20px 25px;
+  border-radius: 12px;
+  list-style: inside disc;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 /* Шаги */
 .steps {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .step {
-    flex: 1 1 220px;
-    text-align: center;
-    font-weight: 600;
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    border: 1px solid rgba(255,255,255,0.1);
+  flex: 1 1 220px;
+  text-align: center;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Отзывы */
 .reviews {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
 }
 
 .review {
-    width: 280px;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
+  width: 300px;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.review strong {
+  color: #2563eb;
+  font-weight: 700;
 }
 
 /* Галерея */
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
 }
 
 .gallery img {
-    width: 280px;
-    border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* Фиксированная кнопка звонка */
-.fixed-call {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #22c55e;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Форма */
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
 }
 
 .contact-form input, .contact-form textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
-    outline: none;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  outline: none;
 }
 
 .contact-form button {
-    padding: 14px;
-    background: #22c55e;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+  padding: 16px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .contact-form button:hover {
-    background: #16a34a;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Фиксированная кнопка */
+.fixed-call {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #22c55e;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Тёмная тема */
 .dark {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
 }
 
-.dark h2, .dark h3, .dark p, .dark li {
-    color: #60a5fa !important;
+.dark h2,
+.dark h3,
+.dark p,
+.dark li {
+  color: #60a5fa !important;
 }
 
-.dark section, .dark .review, .dark .step, .dark ul, .dark .contact-form {
-    background: rgba(30,41,59,0.85);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: white;
+.dark section,
+.dark .review,
+.dark .step,
+.dark ul,
+.dark .contact-form {
+  background: rgba(30, 41, 59, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
 }
 
 /* Адаптивность */
 @media screen and (max-width: 768px) {
-    .steps {
-        flex-direction: column;
-        align-items: center;
-    }
-    .gallery img {
-        width: 100%;
-        max-width: 280px;
-    }
-}
-
-/* Блок с отзывами */
-.reviews {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-/* Каждый отзыв */
-.review {
-    background: rgba(255, 255, 255, 0.85); /* Стеклянный эффект */
-    backdrop-filter: blur(10px); /* Размытие фона */
-    border-radius: 12px;
-    padding: 20px;
-    width: 300px; /* Чтобы отзывы были одинаковыми по ширине */
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  .hero {
+    padding: 60px 15px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero .subtitle {
+    font-size: 18px;
+  }
+  .reviews {
+    flex-direction: column;
+    align-items: center;
+  }
+  .review {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+  }
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  .contact-form input,
+  .contact-form textarea {
     font-size: 16px;
-    line-height: 1.6;
-    text-align: center;
-}
-
-.review p {
-    margin-bottom: 15px;
-}
-
-.review strong {
-    font-weight: bold;
-    color: #2563eb; /* Синий цвет для автора */
-}
-
-/* Галерея */
-.gallery {
-    display: grid; /* Используем сетку */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Адаптивные колонки */
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.gallery img {
-    width: 100%; /* Растягиваем изображения по ширине */
-    height: auto;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.05); /* Легкое увеличение изображения */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-/* Адаптивность */
-@media screen and (max-width: 768px) {
-    /* Главный экран */
-    .hero {
-        padding: 60px 15px;
-    }
-
-    /* Заголовки */
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero .subtitle {
-        font-size: 18px;
-    }
-
-    /* Отзывы */
-    .reviews {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .review {
-        width: 100%; /* Занимает всю ширину экрана */
-        padding: 15px;
-        margin: 10px 0;
-    }
-
-    /* Галерея */
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Адаптивные колонки */
-        gap: 15px;
-    }
-
-    /* Форма */
-    .contact-form input, .contact-form textarea {
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    .contact-form button {
-        font-size: 18px;
-        padding: 12px;
-    }
-
-    /* Кнопка "Дзвонити" */
-    .fixed-call {
-        padding: 10px 15px;
-        font-size: 16px;
-    }
-
-    /* Кнопка темы */
-    .theme-toggle {
-        top: 15px;
-        right: 15px;
-        font-size: 18px;
-        padding: 8px;
-    }
+    padding: 10px;
+  }
+  .contact-form button {
+    font-size: 18px;
+    padding: 12px;
+  }
+  .fixed-call {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    font-size: 18px;
+    padding: 8px;
+  }
 }
