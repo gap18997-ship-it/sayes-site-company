@@ -89,13 +89,10 @@ SAYES — це сучасна офісна компанія, яка об’єд�
     </div>
 </div>
 
-<form action="https://formspree.io/f/xjgepwge" method="POST" class="contact-form">
+<form action="https://formspree.io/f/xabcd123" method="POST" class="contact-form" id="contactForm">
     <input type="text" name="name" placeholder="Ваше ім'я" required>
     <input type="tel" name="phone" placeholder="Ваш номер телефону" required>
     <textarea name="message" placeholder="Коментар (необов'язково)"></textarea>
-
-    <!-- редирект на свою страницу благодарности -->
-    <input type="hidden" name="_next" value="https://gap18997-ship-it/sayes-site.github.io/thanks.html">
 
     <button type="submit">Відправити</button>
 
@@ -180,7 +177,28 @@ form.addEventListener("submit", async function(e) {
 });
 </script>
 
+<script>
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", async function(e) {
+    e.preventDefault(); // предотвращаем стандартное поведение
+
+    const formData = new FormData(form);
+
+    const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+        // письмо отправлено, редиректим на благодарность
+        window.location.href = "thanks.html";
+    } else {
+        alert("Сталася помилка, спробуйте ще раз.");
+    }
+});
+</script>
+
 </body>
 </html>
-
-
