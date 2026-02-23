@@ -89,6 +89,13 @@ SAYES — це сучасна офісна компанія, яка об’єд�
     </div>
 </div>
 
+<form action="https://formspree.io/f/xjgepwge" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="Ваше ім'я" required>
+    <input type="tel" name="phone" placeholder="Ваш номер телефону" required>
+    <textarea name="message" placeholder="Коментар (необов'язково)"></textarea>
+    <button type="submit">Відправити</button>
+</form>
+
 <h2 id="contacts">Контакти</h2>
 <div class="contacts">
     <h3>Телефон: +380661655247</h3>
@@ -127,6 +134,21 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('section, .step, .review').forEach(el => {
     el.classList.add('fade');
     observer.observe(el);
+});
+</script>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll("section, .review, .step").forEach(el => {
+  el.classList.add("fade-in");
+  observer.observe(el);
 });
 </script>
 
