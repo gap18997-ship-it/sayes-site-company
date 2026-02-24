@@ -61,7 +61,9 @@ body {margin: 0; font-family: 'Montserrat', sans-serif; background: #f4f6f9; col
 /* Кнопки */
 .mainbtn, .call, .tg, .fixed-call { transition: all 0.3s ease; }
 .mainbtn, .call {
-  display: inline-block;
+  display: inline-flex;
+align-items: center;
+justify-content: center;
   background: linear-gradient(135deg, #22c55e, #16a34a);
   color: white;
   padding: 16px 28px;
@@ -311,4 +313,14 @@ ul {
     font-size: 18px;
     padding: 8px;
   }
+}
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* расстояние между кнопками */
+  margin-top: 20px;
+}
+.hero-buttons a {
+  width: 48%;
+  text-align: center;
 }
